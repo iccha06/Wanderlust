@@ -1,0 +1,320 @@
+/* ===== Global Styles ===== */
+:root {
+  --primary-color: #fe424d;
+  --secondary-color: #222222;
+  --light-bg: #f8f9fa;
+  --soft-bg: #ebebeb;
+  --white: #ffffff;
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-md: 0 10px 25px rgba(0,0,0,0.15);
+  --transition: all 0.3s ease;
+  --radius: 1rem;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--light-bg);
+  color: var(--secondary-color);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  flex: 1;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  height: 5rem;
+  background-color: var(--white);
+  padding: 0 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.fa-compass {
+  color: var(--primary-color);
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.fa-compass:hover {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.nav-link {
+  color: var(--secondary-color) !important;
+  font-weight: 500 !important;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--primary-color);
+  left: 0;
+  bottom: -2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ===== Footer ===== */
+.f-info {
+  text-align: center;
+  min-height: 8rem;
+  background-color: var(--soft-bg);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.f-info-links a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.f-info-socials {
+  font-size: 1.4rem;
+}
+
+.f-info-socials i {
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.f-info-socials i:hover {
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* ===== Listings ===== */
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Card Styling ===== */
+.card {
+  border: none !important;
+  border-radius: var(--radius) !important;
+  overflow: hidden !important;
+  margin-bottom: 2rem;
+  width: 100%;
+  background-color: var(--white);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-img-top {
+  border-top-left-radius: var(--radius) !important;
+  border-top-right-radius: var(--radius) !important;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1rem !important;
+}
+
+.card-text p {
+  font-weight: 400 !important;
+  margin-bottom: 0;
+  color: #555;
+}
+
+/* ===== Image Overlay ===== */
+.card-img-overlay {
+  opacity: 0;
+  border-radius: var(--radius) !important;
+  background: rgba(255,255,255,0.2);
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-img-overlay {
+  opacity: 1;
+}
+
+/* ===== Buttons ===== */
+.add-butt,
+.update-btn {
+  background-color: var(--primary-color) !important;
+  border: none !important;
+  padding: 0.7rem 1.4rem !important;
+  border-radius: 0.7rem !important;
+  font-weight: 600 !important;
+  transition: var(--transition);
+}
+
+.add-butt:hover,
+.update-btn:hover {
+  background-color: #e63946 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(254,66,77,0.3);
+}
+
+/* ===== Images ===== */
+.show-img {
+  height: 30vh;
+  width: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+}
+
+.listing-preview {
+  width: 100%;
+  max-width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+/* ===== Forms ===== */
+.form-control {
+  border-radius: 0.7rem !important;
+  padding: 0.75rem 1rem !important;
+  border: 1px solid #ced4da !important;
+  transition: var(--transition);
+}
+
+/* ===== Validation Styles ===== */
+
+.was-validated .form-control:valid {
+  border-color: #ced4da !important;
+  background-image: none !important;
+}
+
+.was-validated .form-control:invalid {
+  border-color: #ced4da !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Optional: keep your custom focus effect */
+.was-validated .form-control:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.15rem rgba(15, 180, 240, 0.25) !important;
+}
+
+/* ===== Map ===== */
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+/* Remove Bootstrap invalid red border */
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+  border-color: #ced4da !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove green valid border */
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  border-color: #ced4da !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+.listing-card{
+    position: relative;
+}
+
+.wishlist-icon{
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    border: none;
+    background-color: white;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.wishlist-icon:hover{
+    transform: scale(1.1);
+}
+
+.wishlist-icon i{
+    font-size: 1.2rem;
+    color: red;
+}
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+
+  .show-img {
+    height: 25vh;
+  }
+
+  .f-info {
+    padding: 2rem 1rem;
+  }
+}
