@@ -1,13 +1,14 @@
 {
     "engines":{
-      "node":"22.18.0"
+      "node":"18.x"
     },
   "name": "airbnb_majorp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "start": "node app.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",

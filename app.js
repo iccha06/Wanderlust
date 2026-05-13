@@ -44,8 +44,8 @@ const sessionOptions={
     resave:false,
     saveUninitialized:true,
     cookie:{
-        expires:Date.now()+7*24*60*1000,
-        maxAge:7*24*60*1000,
+        expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+        maxAge: 7 * 24 * 60 * 60 * 1000,
         httpOnly:true,
     },
 };
@@ -122,8 +122,10 @@ app.use((err, req, res, next) => {
 });
 
 // Server
-app.listen(8080, () => {
-    console.log("Server is listening on port 8080...");
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
 });
 
 
