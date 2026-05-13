@@ -45,6 +45,16 @@
         class="form-control"
     >
 </div>
+<div class="mb-3">
+    <label class="form-label">Category</label>
+
+    <select name="listing[category]" class="form-control" required>
+        <option value="Rooms" <%= listing.category === "Rooms" ? "selected" : "" %>>Rooms</option>
+        <option value="Trending" <%= listing.category === "Trending" ? "selected" : "" %>>Trending</option>
+        <option value="Beach" <%= listing.category === "Beach" ? "selected" : "" %>>Beach</option>
+        <option value="Mountain" <%= listing.category === "Mountain" ? "selected" : "" %>>Mountain</option>
+    </select>
+</div>
             <div class="row">
                 <div class="mb-3 col-md-4">
                     <label class="form-label">Price</label>
