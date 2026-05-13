@@ -5,7 +5,7 @@ if(process.env.NODE_ENV!="production"){
 const express = require("express");
 const mongoose = require("mongoose");
 const session=require("express-session");
-const MongoStore = require('connect-mongo').default;;
+const MongoStore = require('connect-mongo');
 const flash=require("connect-flash");
 const Listing = require("./models/listings.js");
 const Review = require("./models/review.js");
@@ -75,7 +75,12 @@ app.engine("ejs", ejsMate);
 
 
 async function main() {
-    await mongoose.connect(dbUrl);
+    try {
+        await mongoose.connect(dbUrl);
+        console.log("MongoDB connected");
+    } catch (err) {
+        console.log("MongoDB connection error:", err);
+    }
 }
 
 main()
