@@ -1,10 +1,15 @@
+const path = require("path");
+if(process.env.NODE_ENV!="production"){
+    require('dotenv').config({ path: '../.env' });
+}
 const mongoose = require("mongoose");
 const Listing = require("../models/listings");
 const sampleListingsData = require("./data");
+const dbUrl=process.env.ATLAS_DB_URL;
 const axios = require("axios");
 
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
+    await mongoose.connect(dbUrl);
     console.log("MongoDB connected!");
 }
 
@@ -14,7 +19,7 @@ const initDB = async () => {
     await Listing.deleteMany({});
     console.log("Existing data cleared.");
 
-    const ownerId = "69fa3fb882cf117b1327483d";
+    const ownerId = "6a046578f5bf77a0d5cdaf48";
 
     const listingsToInsert = [];
 
